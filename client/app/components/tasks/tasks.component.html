@@ -1,0 +1,38 @@
+<form class="well" (submit)="addTask($event)">
+      <div class="form-group">
+        <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="Add Task...">    
+      </div>  
+</form>
+
+<div class="task-list">
+    <div *ngFor="let task of tasks">
+        <div class="row">
+        <div class="col-md-7">
+                <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                          <input type="checkbox" [checked]="task.isDone" (click)="updateStatus(task)">
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder=" {{task.title}}  " aria-label="Text input with radio button">
+                      </div>
+
+        </div>
+        <div class="col-md-5">
+            <input type="button" (click)="deleteTask(task._id)" value="Delete" class="btn btn-outline-danger btn-sm">    
+        </div>
+        <br>
+        <br>
+    </div>
+    
+
+    
+   
+              
+            
+          
+          
+        
+
+    </div>
+</div>
